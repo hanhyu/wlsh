@@ -1,6 +1,6 @@
 {
     "name": "hanhyu/wlsh",
-    "description": "酷毙的码农为了生活自由的php内存长驻框架",
+    "description": "酷毙的码农为了生活自由基于swoole开发的php内存长驻扩展",
     "license": "Apache",
     "authors": [
         {
