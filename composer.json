@@ -2,6 +2,7 @@
     "name": "hanhyu/wlsh",
     "description": "酷毙的码农为了生活自由基于swoole开发的php内存长驻扩展",
     "license": "Apache",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "hanhyu",
