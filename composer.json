@@ -1,10 +1,19 @@
 {
     "name": "hanhyu/wlsh",
+    "description": "酷毙的码农为了生活自由的php内存长驻框架",
+    "license": "Apache",
     "authors": [
         {
             "name": "hanhyu",
             "email": "hanhyu@qq.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+
+        }
+    }
 }
