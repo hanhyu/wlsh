@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'wlsh\\w\\' => array($baseDir . '/w'),
+    'wlsh\\l\\' => array($baseDir . '/l'),
 );

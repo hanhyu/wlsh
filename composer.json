@@ -1,12 +1,18 @@
 {
     "name": "hanhyu/wlsh",
     "description": "酷毙的码农为了生活自由基于swoole开发的php内存长驻扩展",
+    "keywords": [
+        "swoole",
+        "redis",
+        "php"
+    ],
     "license": "Apache",
     "minimum-stability": "dev",
     "authors": [
         {
             "name": "hanhyu",
-            "email": "hanhyu@qq.com"
+            "email": "hanhyu@qq.com",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -14,7 +20,8 @@
     },
     "autoload": {
         "psr-4": {
-
+            "wlsh\\w\\": "w/",
+            "wlsh\\l\\": "l/"
         }
     }
 }
