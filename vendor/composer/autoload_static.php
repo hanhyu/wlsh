@@ -10,7 +10,9 @@ class ComposerStaticInit12cc4f870f4d9f28389f5d03ceff9039
         'w' => 
         array (
             'wlsh\\w\\' => 7,
+            'wlsh\\s\\' => 7,
             'wlsh\\l\\' => 7,
+            'wlsh\\h\\' => 7,
         ),
     );
 
@@ -19,10 +21,23 @@ class ComposerStaticInit12cc4f870f4d9f28389f5d03ceff9039
         array (
             0 => __DIR__ . '/../..' . '/w',
         ),
+        'wlsh\\s\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/s',
+        ),
         'wlsh\\l\\' => 
         array (
             0 => __DIR__ . '/../..' . '/l',
         ),
+        'wlsh\\h\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/h',
+        ),
+    );
+
+    public static $classMap = array (
+        'wlsh\\w\\Index' => __DIR__ . '/../..' . '/w/Index.php',
+        'wlsh\\w\\Login' => __DIR__ . '/../..' . '/w/Login.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -30,6 +45,7 @@ class ComposerStaticInit12cc4f870f4d9f28389f5d03ceff9039
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit12cc4f870f4d9f28389f5d03ceff9039::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit12cc4f870f4d9f28389f5d03ceff9039::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit12cc4f870f4d9f28389f5d03ceff9039::$classMap;
 
         }, null, ClassLoader::class);
     }

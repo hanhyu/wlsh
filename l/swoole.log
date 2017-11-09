@@ -1,10 +1,15 @@
-masterPid:109   managerPid:110
-bool(true)
-ctrl:\wlsh\w\login
+Swoole http server is started at http://127.0.0.1:9501
 New AsyncTask[id=0]
-AsyncTask[0] finished: Async -> OK
-ctrl:\wlsh\w\Login
 New AsyncTask[id=1]
-AsyncTask[1] finished: Async -> OK
+New AsyncTask[id=2]
+New AsyncTask[id=3]
 client-1 is closed
-===============2017-11-07 03:30:08欢送1离开==============
+===============2017-11-09 07:56:10欢送1离开==============
+[2017-11-09 08:01:01 #575.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9501
+New AsyncTask[id=0]
+New AsyncTask[id=1]
+[2017-11-09 08:01:54 $589.0]	NOTICE	Server is reloading now.
+New AsyncTask[id=0]
+client-1 is closed
+===============2017-11-09 08:03:57欢送1离开==============

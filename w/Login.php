@@ -2,6 +2,13 @@
 namespace wlsh\w;
 class Login {
     public function index($request){
-        return 'login234';
+        return 'login action';
     }
+    public function ef($request){
+        return '3wwe';
+    }
+    public function ef3($request){
+        return '34';
+    }
+
 }

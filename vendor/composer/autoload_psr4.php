@@ -7,5 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'wlsh\\w\\' => array($baseDir . '/w'),
+    'wlsh\\s\\' => array($baseDir . '/s'),
     'wlsh\\l\\' => array($baseDir . '/l'),
+    'wlsh\\h\\' => array($baseDir . '/h'),
 );

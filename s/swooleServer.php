@@ -1,5 +1,6 @@
 <?php
-namespace wlsh\l;
+namespace wlsh\s;
+
 class swooleServer{
     private $http;
     private $tcp;
@@ -30,8 +31,8 @@ class swooleServer{
 
     public function onStart($http) {
         echo "Swoole http server is started at http://127.0.0.1:9501\n";
-        $myfile = fopen('/home/wlsh/l/swoole.log', 'w');
-        fwrite($myfile, 'masterPid:'.$http->master_pid. '   managerPid:'.$http->manager_pid . PHP_EOL);
+        $myfile = fopen('/home/wlsh/l/swoolePid.log', 'w');
+        fwrite($myfile, json_encode(['masterPid'=>$http->master_pid]));
         fclose($myfile);
     }
 
@@ -40,11 +41,18 @@ class swooleServer{
     }
 
     public function onWorkerStart($http, $worker_id) {
+        if(!$http->taskworker){
+            require __DIR__ . "/../vendor/autoload.php";
+        }
+        if($worker_id == 0) {
+            $this->sReload();
+        }
 
     }
 
     public function onOpen($http, $request) {
         echo '==============='. date("Y-m-d H:i:s", time()). '欢迎' . $request->fd . '进入==============' . PHP_EOL;
+
     }
 
     public function onMessage($http, $frame) {
@@ -57,20 +65,18 @@ class swooleServer{
         $path_info = explode('/',$request->server['path_info']);
 
         if( isset($path_info[1]) && !empty($path_info[1])) {  // ctrl
-            $ctrl = '\\wlsh\\w\\' . $path_info[1];
+            $ctrl = "wlsh\w\\{$path_info[1]}" ;
         } else {
-            $ctrl = '\\wlsh\w\\Index';
+            $ctrl = "wlsh\w\Index";
         }
         if( isset($path_info[2] ) ) {  // method
             $action = $path_info[2];
         } else {
             $action = 'index';
         }
-        echo 'ctrl:' . $ctrl . PHP_EOL;
         $result = "Ctrl not found";
-        if( class_exists($ctrl) )
+        if( class_exists( $ctrl ) )
         {
-            echo 'ctrl:' . $ctrl . PHP_EOL;
             $class = new $ctrl();
 
             $result = "Action not found";
@@ -80,15 +86,18 @@ class swooleServer{
                 $result = $class->$action($request);
             }
         }
+
         //把不依赖某种业务逻辑的返回数据，让异步task执行。
         $this->http->task("Async");
-        $response->header("Content-Type", "text/plain");
+        $response->header("Content-Type", "text/plain;charset=UTF-8");
+
         $response->end($result);
     }
 
     public function onTask($http, $task_id, $reactor_id, $data) {
         echo "New AsyncTask[id=$task_id]\n";
-        $http->finish("$data -> OK");
+        //$http->finish("$data -> OK");
+        return;
     }
 
     public function onClose($http, $fd) {
@@ -97,8 +106,29 @@ class swooleServer{
     }
 
     public function onFinish($http, $task_id, $data) {
-        echo "AsyncTask[$task_id] finished: {$data}\n";
+        //echo "AsyncTask[$task_id] finished: {$data}\n";
     }
+
+    private function sReload() {
+        $fd1 = inotify_init();
+        $file = __DIR__ . "/../w/Login.php";
+        inotify_add_watch($fd1, $file, IN_MODIFY );
+
+        $myfile = fopen(__DIR__ . "/../l/swoolePid.log", 'r');
+        $pid = fread($myfile, 20);
+        fclose($myfile);
+        $pid = json_decode($pid, true)['masterPid'];
+
+        swoole_event_add($fd1, function () use ($fd1, $pid){
+            $events = inotify_read($fd1);
+            if ($events) {
+                exec("kill -USR1 {$pid}");
+            }
+        });
+
+    }
+
 }
+
 
 new swooleServer();

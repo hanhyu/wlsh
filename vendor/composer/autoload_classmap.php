@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'wlsh\\w\\Index' => $baseDir . '/w/Index.php',
+    'wlsh\\w\\Login' => $baseDir . '/w/Login.php',
 );
