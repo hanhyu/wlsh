@@ -13,3 +13,319 @@ New AsyncTask[id=1]
 New AsyncTask[id=0]
 client-1 is closed
 ===============2017-11-09 08:03:57欢送1离开==============
+Swoole http server is started at http://127.0.0.1:9501
+New AsyncTask[id=0]
+New AsyncTask[id=1]
+New AsyncTask[id=2]
+client-1 is closed
+===============2017-11-13 01:28:24欢送1离开==============
+New AsyncTask[id=3]
+client-2 is closed
+===============2017-11-13 01:31:27欢送2离开==============
+[2017-11-13 04:00:28 #50.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9502
+New AsyncTask[id=0]
+New AsyncTask[id=1]
+New AsyncTask[id=2]
+New AsyncTask[id=0]
+client-2 is closed
+===============2017-11-13 04:12:51欢送2离开==============
+client-1 is closed
+===============2017-11-13 04:13:59欢送1离开==============
+New AsyncTask[id=3]
+client-3 is closed
+===============2017-11-13 04:14:56欢送3离开==============
+New AsyncTask[id=4]
+New AsyncTask[id=5]
+New AsyncTask[id=1]
+client-5 is closed
+===============2017-11-13 04:15:53欢送5离开==============
+New AsyncTask[id=6]
+New AsyncTask[id=7]
+New AsyncTask[id=2]
+client-6 is closed
+===============2017-11-13 04:16:42欢送6离开==============
+client-4 is closed
+===============2017-11-13 04:18:07欢送4离开==============
+[2017-11-13 05:55:32 #62071.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9502
+client-1 is closed
+===============2017-11-13 05:55:57欢送1离开==============
+client-2 is closed
+===============2017-11-13 05:56:30欢送2离开==============
+New AsyncTask[id=0]
+client-3 is closed
+===============2017-11-13 05:56:34欢送3离开==============
+New AsyncTask[id=1]
+client-4 is closed
+===============2017-11-13 05:57:04欢送4离开==============
+client-5 is closed
+===============2017-11-13 05:57:15欢送5离开==============
+client-6 is closed
+===============2017-11-13 05:57:29欢送6离开==============
+[2017-11-13 06:11:47 #62134.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9502
+client-1 is closed
+===============2017-11-13 06:12:21欢送1离开==============
+New AsyncTask[id=0]
+client-2 is closed
+===============2017-11-13 06:12:25欢送2离开==============
+New AsyncTask[id=1]
+client-3 is closed
+===============2017-11-13 06:12:32欢送3离开==============
+client-4 is closed
+===============2017-11-13 06:12:42欢送4离开==============
+[2017-11-13 06:41:17 #62164.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9502
+client-1 is closed
+===============2017-11-13 06:41:40欢送1离开==============
+New AsyncTask[id=0]
+New AsyncTask[id=1]
+client-3 is closed
+===============2017-11-13 06:42:34欢送3离开==============
+client-2 is closed
+===============2017-11-13 06:44:00欢送2离开==============
+client-4 is closed
+===============2017-11-13 06:55:49欢送4离开==============
+New AsyncTask[id=2]
+New AsyncTask[id=3]
+[2017-11-13 06:58:15 #62239.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9502
+New AsyncTask[id=0]
+client-2 is closed
+===============2017-11-13 06:58:54欢送2离开==============
+client-1 is closed
+===============2017-11-13 07:00:38欢送1离开==============
+[2017-11-13 07:03:29 #62266.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9501
+New AsyncTask[id=0]
+client-2 is closed
+===============2017-11-13 07:58:50欢送2离开==============
+client-3 is closed
+===============2017-11-13 07:58:59欢送3离开==============
+New AsyncTask[id=1]
+New AsyncTask[id=2]
+New AsyncTask[id=3]
+New AsyncTask[id=4]
+client-4 is closed
+===============2017-11-13 08:00:09欢送4离开==============
+client-1 is closed
+===============2017-11-13 08:01:53欢送1离开==============
+[2017-11-13 08:02:06 #62376.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9501
+New AsyncTask[id=0]
+New AsyncTask[id=1]
+[2017-11-13 08:33:38 #62426.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9501
+New AsyncTask[id=0]
+client-1 is closed
+===============2017-11-13 08:35:59欢送1离开==============
+New AsyncTask[id=1]
+client-2 is closed
+===============2017-11-13 08:36:06欢送2离开==============
+[2017-11-13 09:03:59 #62440.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9502
+New AsyncTask[id=0]
+client-1 is closed
+===============2017-11-13 09:04:14欢送1离开==============
+New AsyncTask[id=1]
+client-2 is closed
+===============2017-11-13 09:04:30欢送2离开==============
+New AsyncTask[id=2]
+client-3 is closed
+===============2017-11-13 09:07:22欢送3离开==============
+New AsyncTask[id=3]
+client-4 is closed
+===============2017-11-13 09:09:31欢送4离开==============
+New AsyncTask[id=4]
+client-5 is closed
+===============2017-11-13 09:21:28欢送5离开==============
+New AsyncTask[id=5]
+client-6 is closed
+===============2017-11-13 09:21:55欢送6离开==============
+[2017-11-13 09:30:12 #62736.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9501
+[2017-11-13 09:30:39 #62998.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9501
+[2017-11-13 09:30:57 #63010.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9502
+New AsyncTask[id=0]
+client-1 is closed
+===============2017-11-13 09:40:09欢送1离开==============
+client-2 is closed
+===============2017-11-13 09:46:24欢送2离开==============
+New AsyncTask[id=1]
+New AsyncTask[id=2]
+client-3 is closed
+===============2017-11-13 09:46:27欢送3离开==============
+client-4 is closed
+New AsyncTask[id=3]
+===============2017-11-13 09:46:32欢送4离开==============
+client-5 is closed
+===============2017-11-13 09:46:39欢送5离开==============
+New AsyncTask[id=4]
+New AsyncTask[id=5]
+client-7 is closed
+===============2017-11-13 10:15:23欢送7离开==============
+New AsyncTask[id=0]
+New AsyncTask[id=1]
+client-8 is closed
+===============2017-11-13 10:15:23欢送8离开==============
+New AsyncTask[id=2]
+client-9 is closed
+===============2017-11-13 10:15:27欢送9离开==============
+client-6 is closed
+===============2017-11-13 10:17:15欢送6离开==============
+New AsyncTask[id=6]
+New AsyncTask[id=3]
+New AsyncTask[id=7]
+New AsyncTask[id=8]
+New AsyncTask[id=9]
+client-11 is closed
+===============2017-11-13 10:19:41欢送11离开==============
+client-10 is closed
+===============2017-11-13 10:24:30欢送10离开==============
+New AsyncTask[id=10]
+New AsyncTask[id=4]
+New AsyncTask[id=11]
+New AsyncTask[id=12]
+client-13 is closed
+===============2017-11-13 10:26:38欢送13离开==============
+client-12 is closed
+===============2017-11-13 10:28:49欢送12离开==============
+New AsyncTask[id=13]
+New AsyncTask[id=14]
+client-14 is closed
+===============2017-11-13 10:39:29欢送14离开==============
+New AsyncTask[id=15]
+New AsyncTask[id=5]
+New AsyncTask[id=16]
+New AsyncTask[id=17]
+New AsyncTask[id=18]
+New AsyncTask[id=19]
+New AsyncTask[id=20]
+New AsyncTask[id=21]
+New AsyncTask[id=22]
+New AsyncTask[id=23]
+client-16 is closed
+===============2017-11-13 10:41:38欢送16离开==============
+client-15 is closed
+===============2017-11-13 10:42:48欢送15离开==============
+New AsyncTask[id=24]
+New AsyncTask[id=25]
+New AsyncTask[id=26]
+New AsyncTask[id=27]
+[2017-11-13 10:51:59 #63022.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9501
+New AsyncTask[id=0]
+New AsyncTask[id=1]
+New AsyncTask[id=2]
+New AsyncTask[id=3]
+New AsyncTask[id=4]
+New AsyncTask[id=5]
+[2017-11-13 10:54:34 #63608.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9501
+New AsyncTask[id=0]
+New AsyncTask[id=1]
+New AsyncTask[id=2]
+client-1 is closed
+===============2017-11-13 11:00:09欢送1离开==============
+client-2 is closed
+===============2017-11-13 11:00:20欢送2离开==============
+client-3 is closed
+client-4 is closed
+===============2017-11-13 11:00:52欢送3离开==============
+===============2017-11-13 11:00:52欢送4离开==============
+New AsyncTask[id=3]
+New AsyncTask[id=4]
+New AsyncTask[id=5]
+client-5 is closed
+===============2017-11-13 11:04:24欢送5离开==============
+New AsyncTask[id=6]
+New AsyncTask[id=7]
+New AsyncTask[id=8]
+New AsyncTask[id=9]
+New AsyncTask[id=10]
+New AsyncTask[id=0]
+client-7 is closed
+===============2017-11-13 11:06:06欢送7离开==============
+New AsyncTask[id=1]
+client-8 is closed
+===============2017-11-13 11:06:12欢送8离开==============
+New AsyncTask[id=11]
+New AsyncTask[id=2]
+client-9 is closed
+===============2017-11-13 11:06:27欢送9离开==============
+[2017-11-13 11:07:13 #63620.2]	NOTICE	Server is shutdown now.
+Swoole http server is started at http://127.0.0.1:9501
+New AsyncTask[id=0]
+===============2017-11-13 11:07:46欢迎2进入==============
+array(3) {
+  ["x"]=>
+  int(1)
+  ["y"]=>
+  int(1)
+  ["player"]=>
+  int(1)
+}
+New AsyncTask[id=1]
+client-2 is closed
+===============2017-11-13 11:08:29欢送2离开==============
+===============2017-11-13 11:08:29欢迎4进入==============
+array(3) {
+  ["x"]=>
+  int(1)
+  ["y"]=>
+  int(1)
+  ["player"]=>
+  int(1)
+}
+client-3 is closed
+===============2017-11-13 11:10:11欢送3离开==============
+client-1 is closed
+===============2017-11-13 11:17:25欢送1离开==============
+New AsyncTask[id=2]
+client-4 is closed
+===============2017-11-13 11:17:58欢送4离开==============
+===============2017-11-13 11:17:58欢迎6进入==============
+array(3) {
+  ["x"]=>
+  int(1)
+  ["y"]=>
+  int(1)
+  ["player"]=>
+  int(1)
+}
+New AsyncTask[id=3]
+client-6 is closed
+===============2017-11-13 11:18:20欢送6离开==============
+===============2017-11-13 11:18:20欢迎7进入==============
+array(3) {
+  ["x"]=>
+  int(1)
+  ["y"]=>
+  int(1)
+  ["player"]=>
+  int(1)
+}
+client-7 is closed
+===============2017-11-13 11:19:29欢送7离开==============
+client-5 is closed
+===============2017-11-13 11:19:52欢送5离开==============
+===============2017-11-13 11:23:50欢迎8进入==============
+array(3) {
+  ["x"]=>
+  int(1)
+  ["y"]=>
+  int(1)
+  ["player"]=>
+  int(1)
+}
+New AsyncTask[id=0]
+client-8 is closed
+===============2017-11-13 11:26:46欢送8离开==============
+New AsyncTask[id=1]
+New AsyncTask[id=2]
+New AsyncTask[id=3]
+New AsyncTask[id=4]
+New AsyncTask[id=5]
