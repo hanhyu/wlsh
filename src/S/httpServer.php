@@ -1,12 +1,12 @@
 <?php
-namespace wlsh\s;
+namespace Wlsh\S;
 
-class wsServer{
+class HttpServer{
     private $http;
     private $tcp;
 
     public function __construct() {
-        $this->http = new \swoole_websocket_server('0.0.0.0', 9501);
+        $this->http = new \swoole_http_server('0.0.0.0', 9501);
         $this->http->set([
             'worker_num' => 2,
             'daemonize' => true,
@@ -16,12 +16,13 @@ class wsServer{
             'log_file' => '/home/wlsh/l/swoole.log',
             'heartbeat_check_interval' => 660,
             'heartbeat_idle_time' => 1200,
+            //'ssl_cert_file' => '/tmp/ssl.crt',
+            //'ssl_key_file' => '/tmp/ssl.key',
+            //'open_http2_protocol' => true
         ]);
         $this->http->on('start', [$this, 'onStart']);
         $this->http->on('managerStart', [$this, 'onManagerStart']);
         $this->http->on('workerStart', [$this, 'onWorkerStart']);
-        $this->http->on('open', [$this, 'onOpen']);
-        $this->http->on('message', [$this, 'onMessage']);
         $this->http->on('request', [$this, 'onRequest']);
         $this->http->on('task', [$this, 'onTask']);
         $this->http->on('close', [$this, 'onClose']);
@@ -30,7 +31,7 @@ class wsServer{
     }
 
     public function onStart($http) {
-        echo "Swoole http server is started at http://127.0.0.1:9501\n";
+        echo "Swoole http server is started at http://127.0.0.1:9502\n";
         $myfile = fopen('/home/wlsh/l/swoolePid.log', 'w');
         fwrite($myfile, json_encode(['masterPid'=>$http->master_pid]));
         fclose($myfile);
@@ -48,17 +49,6 @@ class wsServer{
             $this->sReload();
         }
 
-    }
-
-    public function onOpen($http, $request) {
-        echo '==============='. date("Y-m-d H:i:s", time()). '欢迎' . $request->fd . '进入==============' . PHP_EOL;
-
-    }
-
-    public function onMessage($http, $frame) {
-        $data = json_decode( $frame->data, true );
-        var_dump($data);
-        if( $http->exist( $frame->fd) ) $http->push( $frame->fd, json_encode($data) );
     }
 
     public function onRequest($request, $response) {
@@ -131,4 +121,4 @@ class wsServer{
 }
 
 
-new wsServer();
+new HttpServer();

@@ -1,3 +1,3 @@
 <?php
-namespace wlsh\h;
+namespace Wlsh\H;
 $config = [];

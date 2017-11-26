@@ -19,14 +19,8 @@
         "php": ">=7.0.0"
     },
     "autoload": {
-        "classmap": [
-            "w"
-        ],
         "psr-4": {
-            "wlsh\\w\\": "w",
-            "wlsh\\l\\": "l",
-            "wlsh\\s\\": "s",
-            "wlsh\\h\\": "h"
+            "Wlsh\\": "src/"
         }
     }
 }

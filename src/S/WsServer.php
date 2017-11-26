@@ -1,28 +1,27 @@
 <?php
-namespace wlsh\s;
+namespace Wlsh\S;
 
-class httpServer{
+class WsServer{
     private $http;
     private $tcp;
 
     public function __construct() {
-        $this->http = new \swoole_http_server('0.0.0.0', 9501);
+        $this->http = new \swoole_websocket_server('0.0.0.0', 9501);
         $this->http->set([
             'worker_num' => 2,
             'daemonize' => true,
             'max_request' => 10000,
             'dispatch_mode' => 2,
             'task_worker_num' => 4,
-            'log_file' => '/home/wlsh/l/swoole.log',
+            'log_file' => __DIR__ . '/../L/swoole.log',
             'heartbeat_check_interval' => 660,
             'heartbeat_idle_time' => 1200,
-            //'ssl_cert_file' => '/tmp/ssl.crt',
-            //'ssl_key_file' => '/tmp/ssl.key',
-            //'open_http2_protocol' => true
         ]);
         $this->http->on('start', [$this, 'onStart']);
         $this->http->on('managerStart', [$this, 'onManagerStart']);
         $this->http->on('workerStart', [$this, 'onWorkerStart']);
+        $this->http->on('open', [$this, 'onOpen']);
+        $this->http->on('message', [$this, 'onMessage']);
         $this->http->on('request', [$this, 'onRequest']);
         $this->http->on('task', [$this, 'onTask']);
         $this->http->on('close', [$this, 'onClose']);
@@ -31,8 +30,8 @@ class httpServer{
     }
 
     public function onStart($http) {
-        echo "Swoole http server is started at http://127.0.0.1:9502\n";
-        $myfile = fopen('/home/wlsh/l/swoolePid.log', 'w');
+        echo "Swoole http server is started at http://127.0.0.1:9501\n";
+        $myfile = fopen(__DIR__ . '/../L/swoolePid.log', 'w');
         fwrite($myfile, json_encode(['masterPid'=>$http->master_pid]));
         fclose($myfile);
     }
@@ -43,7 +42,7 @@ class httpServer{
 
     public function onWorkerStart($http, $worker_id) {
         if(!$http->taskworker){
-            require __DIR__ . "/../vendor/autoload.php";
+            require __DIR__ . "/../../vendor/autoload.php";
         }
         if($worker_id == 0) {
             $this->sReload();
@@ -51,16 +50,27 @@ class httpServer{
 
     }
 
+    public function onOpen($http, $request) {
+        echo '==============='. date("Y-m-d H:i:s", time()). '欢迎' . $request->fd . '进入==============' . PHP_EOL;
+
+    }
+
+    public function onMessage($http, $frame) {
+        $data = json_decode( $frame->data, true );
+        var_dump($data);
+        if( $http->exist( $frame->fd) ) $http->push( $frame->fd, json_encode($data) );
+    }
+
     public function onRequest($request, $response) {
         $path_info = explode('/',$request->server['path_info']);
 
         if( isset($path_info[1]) && !empty($path_info[1])) {  // ctrl
-            $ctrl = "wlsh\w\\{$path_info[1]}" ;
+            $ctrl = "Wlsh\W\\" . ucfirst($path_info[1]);
         } else {
-            $ctrl = "wlsh\w\Index";
+            $ctrl = "Wlsh\W\Index";
         }
         if( isset($path_info[2] ) ) {  // method
-            $action = $path_info[2];
+            $action = lcfirst($path_info[2]);
         } else {
             $action = 'index';
         }
@@ -101,10 +111,10 @@ class httpServer{
 
     private function sReload() {
         $fd1 = inotify_init();
-        $file = __DIR__ . "/../w/Login.php";
+        $file = __DIR__ . "/../W/Login.php";
         inotify_add_watch($fd1, $file, IN_MODIFY );
 
-        $myfile = fopen(__DIR__ . "/../l/swoolePid.log", 'r');
+        $myfile = fopen(__DIR__ . "/../L/swoolePid.log", 'r');
         $pid = fread($myfile, 20);
         fclose($myfile);
         $pid = json_decode($pid, true)['masterPid'];
@@ -121,4 +131,4 @@ class httpServer{
 }
 
 
-new httpServer();
+new WsServer();
