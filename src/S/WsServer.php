@@ -45,7 +45,7 @@ class WsServer{
             require __DIR__ . "/../../vendor/autoload.php";
         }
         if($worker_id == 0) {
-            $this->sReload();
+            $this->sReload();   //监听需要修改的文件，修改后自动平滑重启worker进程。
         }
 
     }
