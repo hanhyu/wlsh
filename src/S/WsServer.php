@@ -1,18 +1,18 @@
 <?php
 namespace Wlsh\S;
-
-class WsServer{
+require __DIR__ . "/DI.php";
+class WsServer {
     private $http;
     private $tcp;
 
     public function __construct() {
         $this->http = new \swoole_websocket_server('0.0.0.0', 9501);
         $this->http->set([
-            'worker_num' => 2,
+            'worker_num' => 8,
             'daemonize' => true,
-            'max_request' => 10000,
+            'max_request' => 100000,
             'dispatch_mode' => 2,
-            'task_worker_num' => 4,
+            'task_worker_num' => 8,
             'log_file' => __DIR__ . '/../L/swoole.log',
             'heartbeat_check_interval' => 660,
             'heartbeat_idle_time' => 1200,
@@ -41,6 +41,10 @@ class WsServer{
     }
 
     public function onWorkerStart($http, $worker_id) {
+        $redis = new \redis();
+        $redis->connect('127.0.0.1', 6379);
+        DI::setInstance('redis', $redis);
+
         if(!$http->taskworker){
             require __DIR__ . "/../../vendor/autoload.php";
         }
@@ -62,6 +66,8 @@ class WsServer{
     }
 
     public function onRequest($request, $response) {
+
+
         $path_info = explode('/',$request->server['path_info']);
 
         if( isset($path_info[1]) && !empty($path_info[1])) {  // ctrl
@@ -88,8 +94,9 @@ class WsServer{
         }
 
         //把不依赖某种业务逻辑的返回数据，让异步task执行。
-        $this->http->task("Async");
+        //$this->http->task("Async");
         $response->header("Content-Type", "text/plain;charset=UTF-8");
+        $response->header("Connection", "keep-alive");
 
         $response->end($result);
     }
@@ -101,8 +108,8 @@ class WsServer{
     }
 
     public function onClose($http, $fd) {
-        echo "client-{$fd} is closed" . PHP_EOL;
-        echo '==============='. date("Y-m-d H:i:s", time()). '欢送' . $fd . '离开==============' . PHP_EOL;
+        //echo "client-{$fd} is closed" . PHP_EOL;
+        //echo '==============='. date("Y-m-d H:i:s", time()). '欢送' . $fd . '离开==============' . PHP_EOL;
     }
 
     public function onFinish($http, $task_id, $data) {

@@ -1,14 +1,13 @@
 <?php
 namespace Wlsh\W;
+use Wlsh\S\DI;
 class Login {
     public function index($request){
-        return 'login action';
+        return 'login action' ;
     }
-    public function ef($request){
-        return '3wwe';
+    public function redis($request){
+        return 'redis is key: '. DI::getInstance('redis')->get('key');
     }
-    public function ef3($request){
-        return '34';
-    }
+
 
 }

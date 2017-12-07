@@ -5,4 +5,7 @@
 
 查了两天时间才查出来这个原因。。。
 
+测试redis性能QPS在12万左右。
+![alt text](/test/redis.png)
+
 

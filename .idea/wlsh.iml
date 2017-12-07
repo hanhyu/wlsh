@@ -8,10 +8,12 @@
       <library name="PHP" type="php">
         <CLASSES>
           <root url="file://$USER_HOME$/ide-helper-master" />
+          <root url="file://$USER_HOME$/php-yaf-doc" />
           <root url="file://$USER_HOME$/phpunit-6.4.4.phar" />
         </CLASSES>
         <SOURCES>
           <root url="file://$USER_HOME$/ide-helper-master" />
+          <root url="file://$USER_HOME$/php-yaf-doc" />
           <root url="file://$USER_HOME$/phpunit-6.4.4.phar" />
         </SOURCES>
       </library>

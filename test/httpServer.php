@@ -10,7 +10,7 @@ use  Swoole\Redis\Server;
 $count = 0;
 $pool = new SplQueue();
 $http = new swoole_http_server("127.0.0.1", 9501);
-$http->set(['worker_num' => 8]);
+$http->set(['worker_num' => 16]);
 //require __DIR__."/../../redis-async/src/Swoole/Async/RedisClient.php";
 //$redis = new Swoole\Async\RedisClient('127.0.0.1');
 
